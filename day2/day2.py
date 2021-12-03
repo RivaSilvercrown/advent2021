@@ -5,13 +5,16 @@ def first(orders):
     l = len(orders)
     i = 0
     while i < l:
-        print(orders[i])
+        ins = orders[i].split()
+        if ins[0] == "forward":
+            horizontal = horizontal+ int(ins[1])
+        elif ins[0]== "up":
+            depth = depth - int(ins[1])
+        else:
+            depth = depth + int(ins[1])
         i = i+1
     pos = horizontal * depth
     return pos
-
-def new_func():
-    return 1
 
 #second puzzle
 def second(orders):
