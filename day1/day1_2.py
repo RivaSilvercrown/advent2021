@@ -10,7 +10,7 @@ def depth_meter(str):
         #calculate both sliding sums
         sumA=int(str[i-3])+int(str[i-2])+int(str[i-1])
         sumB=int(str[i-2])+int(str[i-1])+int(str[i])
-        if int(str[i-1])<int(str[i]):
+        if sumA<sumB:
             #if depth increases we count it
             times = times+1
         i = i+1
