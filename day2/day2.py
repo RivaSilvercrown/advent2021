@@ -35,7 +35,6 @@ def second(orders):
         i = i+1
     pos = horizontal * depth
     return pos
-    return 0
 
 
 #################
