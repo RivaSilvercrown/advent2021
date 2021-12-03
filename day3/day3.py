@@ -1,3 +1,4 @@
+from collections import Counter
 #first puzzle
 def first(values):
     l = len(values[0])
@@ -35,12 +36,26 @@ def first(values):
 
 #second puzzle
 def second(values):
+    l = len(values[0])
+    i=0
+    oxygen = values
+
+    while i < l:
+        a = Counter(ox[i] for ox in oxygen)
+        c = list(a.keys())
+        for ox in oxygen:
+            if ox[i] == c[0]:
+                oxygen.remove(ox)
+        i = i+1
+    print(oxygen)
+
+
 
     return 0
 
 
 #################
-input_file = open("day3input.txt", "r")
+input_file = open("day3/day3input.txt", "r")
 content = input_file.read()
 values = content.split("\n")
 print("First puzzle result:")
