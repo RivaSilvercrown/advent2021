@@ -39,19 +39,48 @@ def second(values):
     l = len(values[0])
     i=0
     oxygen = values
+    co2 = values
 
     while i < l:
-        a = Counter(ox[i] for ox in oxygen)
-        c = list(a.keys())
-        for ox in oxygen:
-            if ox[i] == c[0]:
-                oxygen.remove(ox)
+        a1=[]
+        a2=[]
+        for o in oxygen:
+            if o[i]=='0':
+                a1.append(o)
+                oxygen.pop()
+            else:
+                a2.append(o)
+                oxygen.pop()
+        if len(a1)>len(a2):
+            oxygen = a1
+        else:
+            oxygen = a2
         i = i+1
-    print(oxygen)
+    i = 0
 
+    while i < l:
+        a1 = []
+        a2 = []
+        if len(co2)>1:
+            for c in co2:
+                if c[i]=='0':
+                    a1.append(c)
+                    co2.pop()
+                else:
+                    a2.append(c)
+                    co2.pop()
+            if len(a1)<len(a2):
+                if len(a1)>=1:
+                    co2 = a1
+            else:
+                if len(a2)>=1:
+                    co2 = a2
+        i = i+1
+    ox = int(oxygen[0],2)
+    diox = int(co2[0],2)
+    lifesupport =  ox*diox
 
-
-    return 0
+    return lifesupport
 
 
 #################
