@@ -45,13 +45,13 @@ def second(values):
         a1=[]
         a2=[]
         for o in oxygen:
-            if o[i]=='0':
+            if o[i]=='1':
                 a1.append(o)
                 oxygen.pop()
             else:
                 a2.append(o)
                 oxygen.pop()
-        if len(a1)>len(a2):
+        if len(a1)>=len(a2):
             oxygen = a1
         else:
             oxygen = a2
@@ -69,7 +69,7 @@ def second(values):
                 else:
                     a2.append(c)
                     co2.pop()
-            if len(a1)<len(a2):
+            if len(a1)<=len(a2):
                 if len(a1)>=1:
                     co2 = a1
             else:
