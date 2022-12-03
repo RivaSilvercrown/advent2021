@@ -2,6 +2,13 @@ from collections import Counter
 #first puzzle
 def first(values):
 
+    numbers = values[0]
+    numbers = numbers.split(',')
+    games_number = int((len(values)-1)/6)
+    board =[]
+    for i in range(games_number):
+        j=i+2
+    print(numbers)
     return -1
 
 #second puzzle
